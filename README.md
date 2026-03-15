@@ -9,6 +9,12 @@ The app supports two interaction modes:
 - **Color + shape mode:** user names the displayed color and shape (for example, `blue circle`).
 - **Count + shape mode (accessibility):** user names how many shapes appear plus the shape (for example, `4 circles`).
 
+## Live App
+
+Use the deployed app URL (Netlify):
+
+- `https://5tycs.netlify.app`
+
 The experience is designed to be calming, lightweight, and deployable as a static-friendly Node service.
 
 ## Table of Contents
@@ -79,7 +85,7 @@ cd 5_things_you_can_see
 npm start
 ```
 
-Then open one of:
+For local testing only, open one of:
 
 - `http://localhost:8000`
 - If port `8000` is occupied, use the fallback port shown in terminal logs (for example `8001`).
