@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grounding Shapes</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./logo.png" />
+    <link rel="shortcut icon" type="image/png" href="./logo.png" />
+    <link rel="apple-touch-icon" href="./logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body class="camera-flipped">
+    <video id="camera" autoplay playsinline muted></video>
+
+    <div id="start-screen" class="start-screen">
+        <div class="start-card">
+            <h2>Take a calm breath</h2>
+            <p>Press start, then name the color and shape you see.</p>
+            <button id="start-btn" type="button">Start</button>
+        </div>
+    </div>
+
+    <div class="overlay">
+        <img class="app-logo" src="./logo.png" alt="App logo" />
+
+        <header>
+            <h1>5 Things You Can See</h1>
+            <p id="instruction">Tap Start to allow camera + microphone.</p>
+        </header>
+
+        <div id="mode-popup" class="mode-popup" aria-live="polite"></div>
+
+        <div id="shape-layer" aria-live="polite"></div>
+        <p id="success-message" class="success-message" aria-live="assertive"></p>
+
+        <div class="controls">
+            <button id="next-btn" type="button" disabled>Skip</button>
+        </div>
+
+        <form id="fallback-form" class="fallback" autocomplete="off">
+            <label id="fallback-label" for="fallback-input">If speech doesn’t work, type color + shape:</label>
+            <div>
+                <input id="fallback-input" type="text" placeholder="e.g. red circle" />
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+
+        <p id="heard" class="heard"></p>
+        <button id="settings-btn" class="settings-btn" type="button" aria-label="Settings">⚙</button>
+    </div>
+
+    <div id="settings-modal" class="settings-modal" aria-hidden="true">
+        <div class="settings-sheet" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+            <div class="settings-head">
+                <h2 id="settings-title">Accessibility Settings</h2>
+                <button id="settings-close-btn" type="button" aria-label="Close settings">✕</button>
+            </div>
+
+            <label class="setting-row" for="colorblind-toggle">
+                <span>Colorblind support</span>
+                <input id="colorblind-toggle" type="checkbox" />
+            </label>
+
+            <label class="setting-row" for="flip-camera-toggle">
+                <span>Flip camera</span>
+                <input id="flip-camera-toggle" type="checkbox" checked />
+            </label>
+
+            <label class="setting-row" for="camera-off-toggle">
+                <span>Turn camera off</span>
+                <input id="camera-off-toggle" type="checkbox" />
+            </label>
+
+            <label class="setting-row" for="high-contrast-toggle">
+                <span>High contrast overlays</span>
+                <input id="high-contrast-toggle" type="checkbox" />
+            </label>
+
+            <label class="setting-row" for="show-heard-toggle">
+                <span>Show speech transcript</span>
+                <input id="show-heard-toggle" type="checkbox" checked />
+            </label>
+
+            <label class="setting-row" for="slow-mode-toggle">
+                <span>Slow transitions</span>
+                <input id="slow-mode-toggle" type="checkbox" />
+            </label>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
